@@ -1,0 +1,17 @@
+name: Echo Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  echo_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Echo a message
+        run: echo "Hello, World! This is a GitHub Actions example."

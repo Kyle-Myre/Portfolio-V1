@@ -23,6 +23,6 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["lemonade", "dim"],
+    themes: ["lemonade", "forest"],
   },
 };

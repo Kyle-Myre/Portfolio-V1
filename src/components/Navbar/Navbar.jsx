@@ -1,3 +1,4 @@
+import { RxCross2 } from "react-icons/rx";
 import { FaBars } from "react-icons/fa";
 import React from "react";
 
@@ -32,15 +33,17 @@ export default function Navbar() {
             </a>
           ))}
         </section>
-        <button
-          className="lg:hidden"
-          onClick={() => setVisible(!visible)}
-        >
-          <FaBars className="size-7" />
-        </button>
+
+        <section className="flex align-center gap-1">
+          <button className="lg:hidden" onClick={() => setVisible(!visible)}>
+            {!visible ? <FaBars className="size-7" /> : <RxCross2 className="size-8" />}
+          </button>
+          
+        </section>
+
       </nav>
       {visible ? (
-        <section className="flex flex-col transition-all duration-500">
+        <section className="flex flex-col justify-center lg:hidden">
           {links.map((link, key) => (
             <a
               className="text-xl hover:text-primary transition-all duration-500 mb-3"

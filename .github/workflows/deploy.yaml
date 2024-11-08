@@ -16,8 +16,7 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
-        with:
-          node-version: '16'  # Specify the correct Node.js version
+      # Specify the correct Node.js version
 
       - name: Cache node_modules
         uses: actions/cache@v3

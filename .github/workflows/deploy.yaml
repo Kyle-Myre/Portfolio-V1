@@ -16,9 +16,22 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v4
+        with:
+          node-version: '16'  # Specify the correct Node.js version
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm install
+
+      - name: Verify installation of @vitejs/plugin-react
+        run: npm list @vitejs/plugin-react
 
       - name: Build project
         run: npm run build
